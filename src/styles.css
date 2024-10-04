@@ -1,0 +1,99 @@
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#root {
+  filter: saturate(1.15) hue-rotate(345deg);
+}
+
+#root * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+canvas {
+  opacity: 0;
+  touch-action: none;
+  animation: fade-in 1s ease 0.3s forwards;
+}
+
+canvas:active {
+  cursor: grabbing;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  z-index: 1;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu .button-52 {
+  text-transform: uppercase;
+  margin: 5px 0;
+  width: 200px;
+}
+.menu .button-52:last-of-type:after {
+  background-color: #9a96ff;
+}
+
+/* CSS */
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: '';
+  background-color: hotpink;
+  border-radius: 8px;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
